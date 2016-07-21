@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @blueprint.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @blueprint.description %>
+</p>
+
+<%= link_to 'Edit', edit_blueprint_path(@blueprint) %>
+<%= link_to 'Back to blueprints', blueprints_path %>

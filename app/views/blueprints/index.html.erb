@@ -1,0 +1,23 @@
+<h1>This is a list of all the cool blueprints!</h1>
+
+<%= link_to 'New blueprint', new_blueprint_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @blueprints.each do |blueprint| %>
+    <tr>
+      <td><%= blueprint.title %></td>
+      <td><%= blueprint.description %></td>
+      <td><%= link_to 'Show', blueprint_path(blueprint) %></td>
+      <td><%= link_to 'Edit', edit_blueprint_path(blueprint) %></td>
+      <td><%= link_to 'Delete', blueprint_path(blueprint),
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+</table>

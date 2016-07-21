@@ -1,0 +1,28 @@
+<%= form_for @blueprint do |f| %>
+  <% if @blueprint.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@blueprint.errors.count, 'error') %> found:
+      </h2>
+      <ul>
+        <% @blueprint.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
