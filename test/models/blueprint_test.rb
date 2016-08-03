@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class BlueprintTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should not save without title set" do
+    blueprint = Blueprint.new
+    assert_not blueprint.save
+  end
+
 end
